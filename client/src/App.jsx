@@ -7,19 +7,19 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("https://pglisting.onrender.com/api/ping")
+    axios.get("http://localhost:8000/api/ping")
       .then(res => {
         setTimeout(() => {
           setMessage(res.data.msg);
           setLoading(false);
-        }, 2000); 
+        }, 2000);
       })
       .catch(err => {
         console.log(err);
         setLoading(false);
       });
   }, []);
-  
+
 
   if (loading) {
     return (
